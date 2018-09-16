@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/css_whir.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+<!--
+//图片滚动列表 mengjia 070927
+var Speed_1 = 10; //速度(毫秒)
+var Space_1 = 20; //每次移动(px)
+var PageWidth_1 = 163 * 1; //翻页宽度
+var interval_1 = 7000; //翻页间隔
+var fill_1 = 0; //整体移位
+var MoveLock_1 = false;
+var MoveTimeObj_1;
+var MoveWay_1="right";
+var Comp_1 = 0;
+var AutoPlayObj_1=null;
+function GetObj(objName){if(document.getElementById){return eval('document.getElementById("'+objName+'")')}else{return eval('document.all.'+objName)}}
+function AutoPlay_1(){clearInterval(AutoPlayObj_1);AutoPlayObj_1=setInterval('ISL_GoDown_1();ISL_StopDown_1();',interval_1)}
+function ISL_GoUp_1(){if(MoveLock_1)return;clearInterval(AutoPlayObj_1);MoveLock_1=true;MoveWay_1="left";MoveTimeObj_1=setInterval('ISL_ScrUp_1();',Speed_1);}
+function ISL_StopUp_1(){if(MoveWay_1 == "right"){return};clearInterval(MoveTimeObj_1);if((GetObj('ISL_Cont_1').scrollLeft-fill_1)%PageWidth_1!=0){Comp_1=fill_1-(GetObj('ISL_Cont_1').scrollLeft%PageWidth_1);CompScr_1()}else{MoveLock_1=false}
+AutoPlay_1()}
+function ISL_ScrUp_1(){if(GetObj('ISL_Cont_1').scrollLeft<=0){GetObj('ISL_Cont_1').scrollLeft=GetObj('ISL_Cont_1').scrollLeft+GetObj('List1_1').offsetWidth}
+GetObj('ISL_Cont_1').scrollLeft-=Space_1}
+function ISL_GoDown_1(){clearInterval(MoveTimeObj_1);if(MoveLock_1)return;clearInterval(AutoPlayObj_1);MoveLock_1=true;MoveWay_1="right";ISL_ScrDown_1();MoveTimeObj_1=setInterval('ISL_ScrDown_1()',Speed_1)}
+function ISL_StopDown_1(){if(MoveWay_1 == "left"){return};clearInterval(MoveTimeObj_1);if(GetObj('ISL_Cont_1').scrollLeft%PageWidth_1-(fill_1>=0?fill_1:fill_1+1)!=0){Comp_1=PageWidth_1-GetObj('ISL_Cont_1').scrollLeft%PageWidth_1+fill_1;CompScr_1()}else{MoveLock_1=false}
+AutoPlay_1()}
+function ISL_ScrDown_1(){if(GetObj('ISL_Cont_1').scrollLeft>=GetObj('List1_1').scrollWidth){GetObj('ISL_Cont_1').scrollLeft=GetObj('ISL_Cont_1').scrollLeft-GetObj('List1_1').scrollWidth}
+GetObj('ISL_Cont_1').scrollLeft+=Space_1}
+function CompScr_1(){if(Comp_1==0){MoveLock_1=false;return}
+var num,TempSpeed=Speed_1,TempSpace=Space_1;if(Math.abs(Comp_1)<PageWidth_1/2){TempSpace=Math.round(Math.abs(Comp_1/Space_1));if(TempSpace<1){TempSpace=1}}
+if(Comp_1<0){if(Comp_1<-TempSpace){Comp_1+=TempSpace;num=TempSpace}else{num=-Comp_1;Comp_1=0}
+GetObj('ISL_Cont_1').scrollLeft-=num;setTimeout('CompScr_1()',TempSpeed)}else{if(Comp_1>TempSpace){Comp_1-=TempSpace;num=TempSpace}else{num=Comp_1;Comp_1=0}
+GetObj('ISL_Cont_1').scrollLeft+=num;setTimeout('CompScr_1()',TempSpeed)}}
+function picrun_ini(){
+GetObj("List2_1").innerHTML=GetObj("List1_1").innerHTML;
+GetObj('ISL_Cont_1').scrollLeft=fill_1>=0?fill_1:GetObj('List1_1').scrollWidth-Math.abs(fill_1);
+GetObj("ISL_Cont_1").onmouseover=function(){clearInterval(AutoPlayObj_1)}
+GetObj("ISL_Cont_1").onmouseout=function(){AutoPlay_1()}
+AutoPlay_1();
+}
+//产品展示滚动图片结束
+//-->
+</script>
+</head>
+<body>
+<!--头部开始-->
+<div id="head">
+  <div class="ban"></div>
+  <div class="nav">
+    <ul>
+      <li><a href="main.html">网站首页</a></li>
+      <li><a href="about.html">大赛介绍</a></li>
+      <li><a href="institution.html">赛程赛制</a></li>
+      <li><a href="photo.html" class="on">作品欣赏</a></li>
+      <li><a href="login.html">我要参加</a></li>
+      <li><a href="xuehua.html">雪花纯生</a></li>
+      <li><a href="#">总部官网</a></li>
+    </ul>
+  </div>
+</div>
+<!--头部结束-->
+<div class="mainsub">
+  <div class="pointb">
+    <div class="pointt">
+      <table width="962" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="400" valign="top"><div class="con_photo">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="690" valign="top"><img src="images/p_s2.jpg" width="653" height="567" class="tp1"/></td>
+                  <td valign="top"><span class="f_red">作品：</span>历史的车轮 <br />
+                    <span class="f_red">作者：</span>王娟<br />
+                    <span class="f_red">作品类别：</span>寻踪营造学社类<br />
+                  <span class="f_red">作品简介：</span>百花公园外墙石头车轮大小不一坐落成排，任风吹雨打，行人匆匆，它们沉默静立见证着这座城的每一天。。。
+				  <div><img src="images/title_s11.gif" /></div>
+				  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="51" height="37">用户名：</td>
+                      <td><input type="text" name="textfield" class="input2"/></td>
+                    </tr>
+                    <tr>
+                      <td height="37">密&nbsp;&nbsp;码：</td>
+                      <td><input type="text" name="textfield2" class="input2"/></td>
+                    </tr>
+                    <tr>
+                      <td valign="top">评&nbsp;&nbsp;论：</td>
+                      <td><textarea name="textarea" class="input3"></textarea></td>
+                    </tr>
+                    <tr>
+                      <td height="42">&nbsp;</td>
+                      <td><input type="submit" name="Submit" value="发表评论" class="btn_4"/></td>
+                    </tr>
+                  </table></td>
+                </tr>
+              </table>
+            </div>
+			
+			<!-- picrotate_left start  -->
+<DIV class="blk_18"><A onmouseup="ISL_StopUp_1()" class="LeftBotton" onmousedown="ISL_GoUp_1()" onmouseout="ISL_StopUp_1()" href="javascript:void(0);" target=_self></A>
+  <DIV class="pcont" id="ISL_Cont_1">
+    <DIV class="ScrCont">
+      <DIV id="List1_1">
+        <!-- piclist begin -->
+        <A class="pl" href="#" target=_blank><img src="images/tp_i1.jpg" width="136" height="117" /></A>
+        <A class="pl" href="#" target=_blank><img src="images/tp_i1.jpg" width="136" height="117" /></A>
+        <A class="pl" href="#" target=_blank><img src="images/tp_i1.jpg" width="136" height="117" /></A>
+        <A class="pl" href="#" target=_blank><img src="images/tp_i1.jpg" width="136" height="117" /></A>
+        <A class="pl" href="#" target=_blank><img src="images/tp_i1.jpg" width="136" height="117" /></A>
+        <A class="pl" href="#" target=_blank><img src="images/tp_i1.jpg" width="136" height="117" /></A>
+        <A class="pl" href="#" target=_blank><img src="images/tp_i1.jpg" width="136" height="117" /></A>
+        <A class="pl" href="#" target=_blank><img src="images/tp_i1.jpg" width="136" height="117" /></A>
+        <A class="pl" href="#" target=_blank><img src="images/tp_i1.jpg" width="136" height="117" /></A>
+        <!-- piclist end -->
+      </DIV>
+      <DIV id="List2_1"></DIV>
+    </DIV>
+  </DIV>
+  <A onmouseup="ISL_StopDown_1()" class="RightBotton" onmousedown="ISL_GoDown_1()" onmouseout="ISL_StopDown_1()" href="javascript:void(0);" target=_self></A></DIV>
+<SCRIPT type=text/javascript>
+<!--
+picrun_ini()
+//-->
+</SCRIPT>
+<!-- picrotate_left end -->
+			
+			</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<!--底部开始-->
+<div id="foot">主办单位：华润雪花啤酒（安徽）有限公司<br />
+  协办单位：安徽建筑工业学院&nbsp;&nbsp;安徽省摄影家协会安徽摄影家网<br />
+  Copyright © 2013雪花纯生中国古建筑摄影大赛安徽分赛区&nbsp;&nbsp;版权所有</div>
+<!--底部结束-->
+</body>
+</html>
